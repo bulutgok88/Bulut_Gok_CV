@@ -94,7 +94,7 @@ else:
 
 # Modeli Hazırla (Gemini 1.5 Flash - Hızlı ve Bedava Tier uyumlu)
 model = genai.GenerativeModel(
-    model_name="gemini-pro",
+    model_name="gemini-2.5-flash",
     system_instruction=SYSTEM_INSTRUCTION
 )
 
@@ -142,4 +142,5 @@ if prompt := st.chat_input("Sorunuzu buraya yazın..."):
                 st.session_state.messages.append({"role": "assistant", "content": response.text})
                 
             except Exception as e:
+
                 st.error(f"Bir hata oluştu: {e}")
